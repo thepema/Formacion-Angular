@@ -1,0 +1,20 @@
+CURSO DE ANGULAR
+
+PRESENTACION
+	-CLI -> explicacion de node y npm -> package.json y toda esa vaina
+	-Presentación de estructura y para que sirve las parte de angular, como tsconfig, angular.json
+
+BASE
+	- Creación de componente y navegación hasta el mismo
+	- Servicios y petición a una API
+	- StoreService
+ 	- Router, navegación entre componentes e Injección de dependencias
+	- Template https://angular.dev/guide/templates
+		- Control flow
+		- listeners
+		- pipes
+		- @defer
+	- Directivas
+	- Formularios
+	- Interceptores
+	- Signals y Rxjs
