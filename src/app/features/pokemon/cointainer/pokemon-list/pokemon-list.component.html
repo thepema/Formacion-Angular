@@ -7,9 +7,10 @@
   }
 </ul>
 
-@if(itemSelected) {
+@defer { 
+  @if(itemSelected) {
 <app-pokemon-detail
   [nombre]="itemSelected"
   (closeEmitter)="itemSelected = null"
 ></app-pokemon-detail>
-}
+} }
