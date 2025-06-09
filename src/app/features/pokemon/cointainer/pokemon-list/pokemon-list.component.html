@@ -1,0 +1,8 @@
+<h3>Pokémon List</h3>
+<ul>
+    @for (pokemon of listPokemons; track $index) {
+        <li>{{ pokemon.name }}</li>
+    }
+</ul>
+
+<button (click)="navigateDetalle()">Ver detalle</button>
