@@ -1,16 +1,16 @@
 <h3>DETALLE POKEMON</h3>
 <button (click)="location.back()"> < Atrás</button>
-@if(pokemon){
+@if(pokemon()){
 <h2>{{ pokemon.name | titlecase }}</h2>
-    @if(pokemon.sprites.front_default){
-        <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+    @if(pokemon().sprites.front_default){
+        <img [src]="pokemon().sprites.front_default" [alt]="pokemon().name">
     }
     <ul>
-        <li><strong>ID:</strong> {{ pokemon.id }}</li>
-        <li><strong>Tipo:</strong> {{ getTipo(pokemon.types)}}
+        <li><strong>ID:</strong> {{ pokemon().id }}</li>
+        <li><strong>Tipo:</strong> {{ getTipo(pokemon().types)}}
         </li>
-        <li><strong>Peso:</strong> {{ pokemon.weight }} kg</li>
-        <li><strong>Altura:</strong> {{ pokemon.height }} m</li>
+        <li><strong>Peso:</strong> {{ pokemon().weight }} kg</li>
+        <li><strong>Altura:</strong> {{ pokemon().height }} m</li>
     </ul>
 }
 @else{

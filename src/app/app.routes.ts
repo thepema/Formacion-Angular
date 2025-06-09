@@ -4,5 +4,5 @@ import { PokemonDetailComponent } from './features/pokemon/cointainer/pokemon-de
 
 export const routes: Routes = [
     { path: '', component: PokemonListComponent },
-    { path: 'detail', component: PokemonDetailComponent }
+    { path: 'detail/:nombre', component: PokemonDetailComponent }
 ];
