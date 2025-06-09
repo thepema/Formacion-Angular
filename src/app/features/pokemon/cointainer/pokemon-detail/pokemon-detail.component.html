@@ -8,7 +8,7 @@
     }
     <ul>
     <li><strong>ID:</strong> {{ pokemon().id }}</li>
-    <li><strong>Tipo:</strong> {{ getTipo(pokemon().types) }}</li>
+    <li><strong>Tipo:</strong> {{ pokemon().types | tipoPokemon }}</li>
     <li><strong>Peso:</strong> {{ pokemon().weight }} kg</li>
     <li><strong>Altura:</strong> {{ pokemon().height }} m</li>
     </ul>

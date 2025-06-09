@@ -1,11 +1,11 @@
 import { Location, TitleCasePipe } from '@angular/common';
 import { Component, input, InputSignal, OnDestroy, OnInit, output, OutputEmitterRef, Signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
+import { TipoPokemonPipe } from '../../services/tipo-pokemon.pipe';
 
 @Component({
   selector: 'app-pokemon-detail',
-  imports: [TitleCasePipe],
+  imports: [TitleCasePipe, TipoPokemonPipe],
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss',
 })
