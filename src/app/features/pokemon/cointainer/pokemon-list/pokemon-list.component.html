@@ -1,6 +1,15 @@
 <h3>Pokémon List</h3>
 <ul>
-    @for (pokemon of listPokemons(); track $index) {
-        <li class="hover" (click)="navigateDetalle(pokemon.name)">{{ pokemon.name }}</li>
-    }
+  @for (pokemon of listPokemons(); track $index) {
+  <li class="hover" (click)="navigateDetalle(pokemon.name)">
+    {{ pokemon.name }}
+  </li>
+  }
 </ul>
+
+@if(itemSelected) {
+<app-pokemon-detail
+  [nombre]="itemSelected"
+  (closeEmitter)="itemSelected = null"
+></app-pokemon-detail>
+}

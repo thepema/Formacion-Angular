@@ -18,7 +18,6 @@ export class PokemonServiceService {
       this.http
         .get<any[]>('https://pokeapi.co/api/v2/pokemon')
         .subscribe((data: any): void => {
-          console.log(data);
           this.listPokemons.set(data.results);
         });
     }
