@@ -1,16 +1,21 @@
 <h3>Pokémon List</h3>
 <ul>
   @for (pokemon of listPokemons(); track $index) {
-  <li class="hover" (click)="navigateDetalle(pokemon.name)">
+  <li
+    class="hover"
+    [ngClass]="{
+    'selected': itemSelected && itemSelected.nombre === pokemon.name,
+  }"
+    (click)="navigateDetalle(pokemon.name, $index)"
+  >
     {{ pokemon.name }}
   </li>
   }
 </ul>
 
-@defer { 
-  @if(itemSelected) {
+@defer { @if(itemSelected) {
 <app-pokemon-detail
-  [nombre]="itemSelected"
+  [nombre]="itemSelected.nombre"
   (closeEmitter)="itemSelected = null"
 ></app-pokemon-detail>
 } }

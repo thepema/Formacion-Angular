@@ -1,5 +1,15 @@
 import { Location, TitleCasePipe } from '@angular/common';
-import { Component, input, InputSignal, OnDestroy, OnInit, output, OutputEmitterRef, Signal } from '@angular/core';
+import {
+  Component,
+  effect,
+  input,
+  InputSignal,
+  OnDestroy,
+  OnInit,
+  output,
+  OutputEmitterRef,
+  Signal,
+} from '@angular/core';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
 import { TipoPokemonPipe } from '../../services/tipo-pokemon.pipe';
 
@@ -9,21 +19,24 @@ import { TipoPokemonPipe } from '../../services/tipo-pokemon.pipe';
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss',
 })
-export class PokemonDetailComponent implements OnInit, OnDestroy {
-
+export class PokemonDetailComponent implements OnDestroy {
   public nombre: InputSignal<string> = input('');
+
   public closeEmitter: OutputEmitterRef<void> = output<void>();
 
   constructor(
     public readonly location: Location,
-    public readonly pokemonServiceService: PokemonServiceService,
-  ) {}
+    public readonly pokemonServiceService: PokemonServiceService
+  ) {
+    effect(() => {
+      const nombreValue = this.nombre();
+      if (nombreValue) {
+        this.pokemonServiceService.getPokemonDetail(nombreValue);
+      }
+    });
+  }
 
   public pokemon = this.pokemonServiceService.pokemonDetail;
-
-  ngOnInit(): void {
-    this.pokemonServiceService.getPokemonDetail(this.nombre());
-  }
 
   ngOnDestroy(): void {
     this.pokemonServiceService.cleanDetail();
