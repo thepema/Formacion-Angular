@@ -15,7 +15,6 @@ export function tarjetaValidator(
 export function range(min: number, max: number): ValidationErrors | null {
   return (control: AbstractControl): ValidationErrors | null => {
       if (control.value && (control.value < min || control.value > max)) {
-        console.log(control.value >= min || control.value <= max);
       return { rangoInvalido: true };
     }else {
       return null;

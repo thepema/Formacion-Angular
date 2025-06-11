@@ -4,6 +4,7 @@ import { PokemonServiceService } from '../../services/pokemon-service.service';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { CommonModule } from '@angular/common';
 import { HighlightDirective } from '../../services/highlight.directive';
+import { StoreService } from '../../../../core/store/store.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -16,9 +17,11 @@ import { HighlightDirective } from '../../services/highlight.directive';
 })
 export class PokemonListComponent implements OnInit {
   public itemSelected: { nombre: string; index: number } | null = null;
-  constructor(private readonly pokemonService: PokemonServiceService) {}
+
+  constructor(private readonly pokemonService: PokemonServiceService, private readonly storeService: StoreService) {}
 
   public listPokemons = this.pokemonService.listPokemons;
+  public entrenador = this.storeService.entrenador;
 
   ngOnInit(): void {
     this.pokemonService.getPokemonList();
