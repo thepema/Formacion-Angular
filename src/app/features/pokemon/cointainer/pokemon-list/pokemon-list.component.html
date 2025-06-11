@@ -2,7 +2,7 @@
 <ul>
   @for (pokemon of listPokemons(); track $index) {
   <li
-    class="hover"
+    appHighlight
     [ngClass]="{
     'selected': itemSelected && itemSelected.nombre === pokemon.name,
   }"

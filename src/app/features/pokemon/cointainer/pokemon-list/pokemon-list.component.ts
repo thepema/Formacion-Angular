@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { CommonModule } from '@angular/common';
+import { HighlightDirective } from '../../services/highlight.directive';
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [PokemonDetailComponent, CommonModule],
+  imports: [PokemonDetailComponent, CommonModule, HighlightDirective],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
   host: {
