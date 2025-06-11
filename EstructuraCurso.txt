@@ -4,17 +4,24 @@ PRESENTACION
 	-CLI -> explicacion de node y npm -> package.json y toda esa vaina
 	-Presentación de estructura y para que sirve las parte de angular, como tsconfig, angular.json
 
+
+API https://pokeapi.co/api/v2/pokemon PARA VER DETALLE https://pokeapi.co/api/v2/pokemon/{POKEMON}
+
+
 BASE
-	- Creación de componente y navegación hasta el mismo
-	- Servicios y petición a una API
-	- StoreService
- 	- Router, navegación entre componentes e Injección de dependencias
+	- Creación de componente, comentar Ciclo de vida y navegación hasta el mismo, Router -> hecho
+	- Servicios, petición a una API, Injección de dependencias -> hecho
+	- Comunicación Padre e Hijo -> hecho -> extra no va a funcionar al elegir otro ya que esta cargado una vez no se actualiza por lo que hay que ver como lo solucionamos -> usar transform en el input
+	- lazyloading y defer explicación chunks-> hecho quitar el HMR para que se vea el funcionamiento, "start:new": "ng serve --hmr=false",
 	- Template https://angular.dev/guide/templates
-		- Control flow
-		- listeners
-		- pipes
-		- @defer
-	- Directivas
-	- Formularios
-	- Interceptores
-	- Signals y Rxjs
+		- Control flow -> hecho -> explicar lo que hay ademas de lo que ya hemos usado
+		- pipes -> hecho
+		- listeners -> hecho
+	- Directivas -> hecho
+	- Formularios -> hecho
+	- StoreService -> hecho
+	- Guards -> hecho
+	- Interceptores -> hecho
+	- i18n -> explicación
+	- Signals y Rxjs -> 
+	- Uso avanzado de componentización y ng-containers, ng-template y viewchild para crear componente comunes y lazyloading
