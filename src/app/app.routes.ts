@@ -6,5 +6,4 @@ export const routes: Routes = [
     { path: 'crear', loadComponent:() => import('./features/pokemon/cointainer/entrenador-form/entrenador-form.component').then(m => m.EntrenadorFormComponent),
         canActivate : [pokemonSelectedGuard]
      },
-    // { path: '', component: PokemonListComponent }
 ];

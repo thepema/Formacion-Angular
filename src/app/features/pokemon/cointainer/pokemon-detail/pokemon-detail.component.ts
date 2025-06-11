@@ -32,6 +32,7 @@ export class PokemonDetailComponent implements OnDestroy {
       const nombreValue = this.nombre();
       if (nombreValue) {
         this.pokemonServiceService.getPokemonDetail(nombreValue);
+        // this.pokemonServiceService.getPokemonDetail('ahslasdkfan');
       }
     });
   }

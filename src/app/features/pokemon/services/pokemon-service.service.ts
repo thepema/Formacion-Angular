@@ -30,12 +30,6 @@ export class PokemonServiceService {
   getPokemonDetail(pokemon: string): void {
     this.http
       .get<any>(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-      .pipe(
-        catchError(() => {
-          window.alert(`Error al obtener los detalles del Pokémon`);
-          return throwError(() => 'Error al obtener los detalles del Pokémon');
-        })
-      )
       .subscribe((data: any): void => {
         if (data) {
           this.pokemonDetail.set(data);
