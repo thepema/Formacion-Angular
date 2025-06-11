@@ -29,6 +29,7 @@ export class EntrenadorFormComponent {
       edad: [18, [Validators.required, Validators.min(10), Validators.max(99)]],
       region: ['', Validators.required],
       genero: ['', Validators.required],
+      pokemon: [this.storeService.selectedPokemon(), Validators.required],
       pokedex: [false]
     });
   }

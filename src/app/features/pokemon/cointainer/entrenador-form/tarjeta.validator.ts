@@ -5,7 +5,6 @@ export function tarjetaValidator(
 ): ValidationErrors | null {
   const numero = group.get('numero')?.value;
   const fecha = group.get('validez')?.value;
-  console.log((numero && !fecha) || (!numero && fecha));
   if ((numero && !fecha) || (!numero && fecha)) {
     return { tarjetaIncompleta: true };
   }

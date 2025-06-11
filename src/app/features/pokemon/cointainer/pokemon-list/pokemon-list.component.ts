@@ -12,23 +12,33 @@ import { StoreService } from '../../../../core/store/store.service';
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
   host: {
-    '(window:keydown)': 'flecha($event)'
-  }
+    '(window:keydown)': 'flecha($event)',
+  },
 })
 export class PokemonListComponent implements OnInit {
   public itemSelected: { nombre: string; index: number } | null = null;
 
-  constructor(private readonly pokemonService: PokemonServiceService, private readonly storeService: StoreService) {}
+  constructor(
+    private readonly pokemonService: PokemonServiceService,
+    private readonly storeService: StoreService,
+    private readonly router: Router
+  ) {}
 
   public listPokemons = this.pokemonService.listPokemons;
   public entrenador = this.storeService.entrenador;
 
   ngOnInit(): void {
     this.pokemonService.getPokemonList();
+    this.storeService.setSelected(undefined);
   }
 
   navigateDetalle(nombre: string, index: number) {
     this.itemSelected = { nombre: nombre, index: index };
+    this.storeService.setSelected({ nombre: nombre, index: index });
+  }
+
+  navigateForm() {
+    this.router.navigate(['/crear']);
   }
 
   flecha(event: KeyboardEvent) {

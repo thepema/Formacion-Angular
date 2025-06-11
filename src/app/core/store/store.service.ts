@@ -6,6 +6,7 @@ type Entrenador = {
   edad: number;
   region: string;
   genero: string;
+  pokemon: any;
   pokedex: boolean;
 };
 
@@ -19,9 +20,13 @@ type Tarjeta = {
 })
 export class StoreService {
   public entrenador: WritableSignal<Entrenador | undefined> = signal<Entrenador | undefined>(undefined);
+  public selectedPokemon: WritableSignal<any> = signal<any>(undefined);
 
   setEntrenador(entrenador: Entrenador): void {
-    console.log('Entrenador guardado:', entrenador);
     this.entrenador.set(entrenador);
+  }
+
+   setSelected(pokemon: any): void {
+    this.selectedPokemon.set(pokemon);
   }
 }
