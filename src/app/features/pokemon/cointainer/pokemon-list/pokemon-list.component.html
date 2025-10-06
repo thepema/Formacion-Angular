@@ -1,9 +1,17 @@
 <h3>Pokémon List</h3>
 
-@if(entrenador()){
-<h1>Entrenador: {{ entrenador()?.nombre }}</h1>
-<h1>Pokemon: {{ entrenador()?.pokemon.nombre }}</h1>
-}
+
+<app-entrenador-detail [entrenador]="entrenador()">
+<ng-template #extras let-entrenador>
+  <div style="border: 3px solid black; ">
+    <h4>Detalles Extra</h4>
+    <ul>
+      <li>{{ entrenador.edad }}</li>
+      <li>{{ entrenador.region }}</li>
+    </ul>
+  </div>
+</ng-template>
+</app-entrenador-detail>
 <ul>
   @for (pokemon of listPokemons(); track $index) {
   <li

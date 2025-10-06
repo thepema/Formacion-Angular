@@ -1,0 +1,7 @@
+@if(entrenador()){
+    <div style="border: 3px solid black; padding: 10px; margin: 10px;">
+        <h1>Entrenador: {{ entrenador()?.nombre }}</h1>
+        <h1>Pokemon: {{ entrenador()?.pokemon.nombre }}</h1>
+        <ng-container *ngTemplateOutlet="extras; context: { $implicit: entrenador() }"></ng-container>
+    </div>
+}

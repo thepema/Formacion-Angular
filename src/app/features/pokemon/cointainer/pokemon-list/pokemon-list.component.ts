@@ -5,10 +5,11 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
 import { CommonModule } from '@angular/common';
 import { HighlightDirective } from '../../services/highlight.directive';
 import { StoreService } from '../../../../core/store/store.service';
+import { EntrenadorDetailComponent } from '../entrenador-detail/entrenador-detail.component';
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [PokemonDetailComponent, CommonModule, HighlightDirective],
+  imports: [PokemonDetailComponent, CommonModule,EntrenadorDetailComponent, HighlightDirective],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
   host: {

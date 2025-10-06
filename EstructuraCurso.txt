@@ -23,5 +23,5 @@ BASE
 	- Guards -> hecho
 	- Interceptores -> hecho
 	- i18n -> explicación
-	- Signals y Rxjs -> 
+	- Signals y Rxjs -> Improvisación
 	- Uso avanzado de componentización y ng-containers, ng-template y viewchild para crear componente comunes y lazyloading
